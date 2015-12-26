@@ -29,7 +29,7 @@ owner:
 background: 
 
 # Open Graph image to be used as a fallback when there are no images specified for a page/post
-open_graph_image: don-frame.jpg
+open_graph_image: don-frame-lg.jpg
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   
