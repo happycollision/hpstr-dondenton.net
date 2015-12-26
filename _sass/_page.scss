@@ -57,6 +57,9 @@ body {
 			@include font-rem(24);
 		}
 	}
+	.post-link {
+		text-decoration: underline;
+	}
 	p {
 		color: lighten($base-color,20);
 	}
