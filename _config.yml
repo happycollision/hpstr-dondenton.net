@@ -32,7 +32,7 @@ background:
 open_graph_image: don-frame-lg.jpg
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:   
+google_analytics:   UA-46624319-2
 google_verify:      
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:         
