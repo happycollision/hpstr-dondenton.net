@@ -59,9 +59,9 @@ Turns Out&#8482; that Google allows you to query your spreadsheet data just like
 {% comment %} Highlighting in swift because it seemed best, color-wise {% endcomment %}
 {% highlight swift %}
 =query(_taxable_,
-  "Select 
+  "SELECT 
     D, sum(J)-sum(I) 
-  where 
+  WHERE 
     B='Purple' AND I>0 
   GROUP BY D 
   ORDER BY 
