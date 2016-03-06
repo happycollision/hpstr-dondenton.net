@@ -3,6 +3,8 @@ layout: post
 title: Query Google Sheets Like a Database
 description: Queries in Google Sheets are pretty awesome at tax time.
 tags: [nerd stuff]
+image:
+  facebook: /images/2016-03-06-spreadsheet-query.jpg
 ---
 
 >In March of 2015, I took the time to program a Google spreadsheet to display my income and deductions based on certain categories for tax year 2014. Yesterday, I started tax prep for this year and I remembered that work I had done in Google Sheets. I am writing about it here because maybe someone else would find the information useful. But really, don't want to forget how it works, so this will be my online record.
