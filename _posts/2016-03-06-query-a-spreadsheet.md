@@ -71,7 +71,7 @@ Turns Out&#8482; that Google allows you to query your spreadsheet data just like
 
 In the code above, `_taxable_` is a keyword for a [named range](https://support.google.com/docs/answer/63175?hl=en) of rows and columns. In my case, it is all but the first row from the sheet with all my tax-related transactions. Then the bit in quotes is SQL (actually, it's [GVAQL](https://developers.google.com/chart/interactive/docs/querylanguage), but whatever). It basically says "Show me payees and the total I paid to each of them if they've got a Purple Flag."
 
-The confusing part might be the `sum(J)-sum(I)` part. Why the `sum()` thing and why subtract outflow from inflow? The `sum()` function is required since I am saying `GROUP BY D`. The query needs to know how to take care of smashing all the numbers together. In this case, add them. I am subtracting `I` from `J` because that is a simple way to get a negative number for my outflows.
+The confusing part might be the `sum(J)-sum(I)` bit. Why the `sum()` thing and why subtract outflow from inflow? The `sum()` function is required since I am saying `GROUP BY D`. The query needs to know how to take care of smashing all the numbers together. In this case, add them. I am subtracting `I` from `J` because that is a simple way to get a negative number for my outflows.
 
 The final `0` at the end of the function call is just telling the function there are zero header rows in `_taxable_`. I already omitted the header by making that named range start at row 2.
 
