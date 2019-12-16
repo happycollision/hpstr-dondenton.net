@@ -153,7 +153,7 @@
 					<div class="song-info">
 						Vocals/Guitar: Don Denton. (Don played Hank Williams the summer before recording this. That twang in his voice when he plays the guitar won't go away for several more months.)
 					</div>
-					<audio src="https://www.dropbox.com/s/obldrsuy43dr0ux/01%20Holly%20Jolly%20Christmas%201.mp3?dl=1" preload="metadata" controls>
+					<audio src="https://f001.backblazeb2.com/file/SharedAudio/A%20Very%20Denton%20Christmas/01%20Holly%20Jolly%20Christmas%201.mp3" preload="metadata" controls>
 						Sorry, your browser will not play this audio. You can download <a href="https://www.dropbox.com/s/obldrsuy43dr0ux/01%20Holly%20Jolly%20Christmas%201.mp3?dl=1">Holly Jolly Christmas</a> directly instead.
 					</audio>
 				</li>
@@ -161,7 +161,7 @@
 					<div class="song-info">
 						Vocals/Guitar: Daniel Ryan Denton, Djembe: Don Denton
 					</div>
-					<audio src="https://www.dropbox.com/s/v1b238ht4hw0wo0/02%20The%20Christmas%20Song%201.mp3?dl=1" preload="metadata" controls>
+					<audio src="https://f001.backblazeb2.com/file/SharedAudio/A%20Very%20Denton%20Christmas/02%20The%20Christmas%20Song%201.mp3" preload="metadata" controls>
 						Sorry, your browser will not play this audio. You can download <a href="https://www.dropbox.com/s/v1b238ht4hw0wo0/02%20The%20Christmas%20Song%201.mp3?dl=1">The Christmas Song</a> directly instead.
 					</audio>
 				</li>
@@ -169,7 +169,7 @@
 					<div class="song-info">
 						Lead Vocals/Composition/Instrumentation: Daniel Ryan Denton, Background Vocals: Don Denton
 					</div>
-					<audio src="https://www.dropbox.com/s/ov6uazefmpu8pww/03%20Silver%20Bells%201.mp3?dl=1" preload="metadata" controls>
+					<audio src="https://f001.backblazeb2.com/file/SharedAudio/A%20Very%20Denton%20Christmas/03%20Silver%20Bells%201.mp3" preload="metadata" controls>
 						Sorry, your browser will not play this audio. You can download <a href="https://www.dropbox.com/s/ov6uazefmpu8pww/03%20Silver%20Bells%201.mp3?dl=1">Silver Bells</a> directly instead.
 					</audio>
 				</li>
@@ -177,7 +177,7 @@
 					<div class="song-info">
 						Vocals: Don Denton, Piano Solo: Daniel Ryan Denton, Instrumentation: glorious karaoke ;-)
 					</div>
-					<audio src="https://www.dropbox.com/s/dwxeual9hlwqwhk/04%20Christmas%20Waltz%201.mp3?dl=1" preload="metadata" controls>
+					<audio src="https://f001.backblazeb2.com/file/SharedAudio/A%20Very%20Denton%20Christmas/04%20Christmas%20Waltz%201.mp3" preload="metadata" controls>
 						Sorry, your browser will not play this audio. You can download <a href="https://www.dropbox.com/s/dwxeual9hlwqwhk/04%20Christmas%20Waltz%201.mp3?dl=1">Christmas Waltz</a> directly instead.
 					</audio>
 				</li>
@@ -185,7 +185,7 @@
 					<div class="song-info">
 						Vocals: Don Denton &amp; Daniel Ryan Denton, Arrangement: Daniel Ryan Denton
 					</div>
-					<audio src="https://www.dropbox.com/s/c7ktp9y50jmojtj/05%20Have%20Yourself%20a%20Merry%20Little%20Christmas.mp3?dl=1" preload="metadata" controls>
+					<audio src="https://f001.backblazeb2.com/file/SharedAudio/A%20Very%20Denton%20Christmas/05%20Have%20Yourself%20a%20Merry%20Little%20Christmas.mp3" preload="metadata" controls>
 						Sorry, your browser will not play this audio. You can download <a href="https://www.dropbox.com/s/c7ktp9y50jmojtj/05%20Have%20Yourself%20a%20Merry%20Little%20Christmas.mp3?dl=1">Have Yourself a Merry Little Christmas</a> directly instead.
 					</audio>
 				</li>
@@ -232,22 +232,22 @@
 					moveFlakes();
 				}
 				//animate the flakes
-				var angle = 0;
+				// var angle = 0;
 				function moveFlakes(){
-					angle += 0.01;
+					// angle += 0.01;
 					for(var i = 0; i < mf; i++){
 						//store the current flake
 						var f = flakes[i];
 						//Upadte Y and X coordinate of each snow
 						f.y += Math.pow(f.d, 2) + 1;
-						f.x += Math.sin(angle) * 2;
+						// f.x += Math.sin(angle) * 2;
 						//if the snow reach to the bottom send it to the top again
 						if(f.y > h){
 							flakes[i] = {x: Math.random()*w, y: 0, r: f.r, d: f.d};
 							}
 						}
 					}
-				setInterval(drawFlakes, 25);
+				setInterval(drawFlakes, 40);
 				window.onresize = (function () {
 					h = window.innerHeight;
 					w = window.innerWidth;
