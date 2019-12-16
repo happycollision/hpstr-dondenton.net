@@ -12,10 +12,19 @@
 				padding: 0;
 			}
 			body {
-				background: url('/images/snowfall.gif') repeat;
+				line-height: 1.4;
+				background-color: rgb(134, 188, 235);
 			}
 			body * {
 				box-sizing: border-box;
+			}
+			canvas {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: -1;
 			}
 			a, a:link, a:visited {
 				color: #A10614;
@@ -28,6 +37,7 @@
 				padding: 12px;
 				color: white;
 				text-align: center;
+				z-index: 2;
 			}
 			.header a, .header a:link, .header a:visited {
 				color: #fff;
@@ -35,8 +45,13 @@
 			.header a:hover {
 				color: #fff;
 			}
+			.header p {
+				max-width: 48em;
+				margin: auto;
+				text-align: left;
+			}
 			h1, h2 {
-				margin: 0;
+				margin: 0 0 0.5em;
 			}
 			h1 {
 				font-size: 52px;
@@ -66,6 +81,7 @@
 				max-width: 600px;
 				margin: 24px auto;
 				box-shadow: 5px 5px 18px #777;
+				z-index: 2;
 			}
 			#album-container:before {
 				content: '';
@@ -88,8 +104,11 @@
 				width: 100%;
 				max-width: 600px;
 				margin: 70px auto 24px;
-				padding: 0;
+				padding: 1em;
 				list-style-position: inside;
+				background: white;
+				box-shadow: 5px 5px 18px #777;
+				z-index: 2;
 			}
 			ol li {
 				margin-bottom: 24px;
@@ -111,11 +130,12 @@
 		<meta property="og:description" content="Don and Daniel Ryan Denton's Christmas album." />
 	</head>
 	<body>
+		<canvas id="sky"></canvas>
 		<div class="header">
 			<h1>A Very Denton Christmas</h1>
 			<h2>Recorded for your listening pleasure in Fall 2011</h2>
 			<p>
-				<a href="http://dondentonactor.com">Don</a> and <a href="http://danielryandenton.com">Daniel</a> thank you for stopping by to listen to the album.
+				<a href="http://dondentonactor.com">Don</a> and Daniel thank you for stopping by to listen to the album. This project was originally a light-hearted gift for their family, recorded when they were together visiting their parents for Christmas in December 2011. Recorded and mastered by Dan. Merry Christmas!
 			</p>
 		</div>
 		
@@ -131,9 +151,9 @@
 			<ol class="track-list">
 				<li>Holly Jolly Christmas
 					<div class="song-info">
-						Vocals/Guitar: Don Denton
+						Vocals/Guitar: Don Denton. (Don played Hank Williams the summer before recording this. That twang in his voice when he plays the guitar won't go away for several more months.)
 					</div>
-					<audio src="https://www.dropbox.com/s/obldrsuy43dr0ux/01%20Holly%20Jolly%20Christmas%201.mp3?dl=1" controls>
+					<audio src="https://www.dropbox.com/s/obldrsuy43dr0ux/01%20Holly%20Jolly%20Christmas%201.mp3?dl=1" preload="metadata" controls>
 						Sorry, your browser will not play this audio. You can download <a href="https://www.dropbox.com/s/obldrsuy43dr0ux/01%20Holly%20Jolly%20Christmas%201.mp3?dl=1">Holly Jolly Christmas</a> directly instead.
 					</audio>
 				</li>
@@ -141,7 +161,7 @@
 					<div class="song-info">
 						Vocals/Guitar: Daniel Ryan Denton, Djembe: Don Denton
 					</div>
-					<audio src="https://www.dropbox.com/s/v1b238ht4hw0wo0/02%20The%20Christmas%20Song%201.mp3?dl=1" controls>
+					<audio src="https://www.dropbox.com/s/v1b238ht4hw0wo0/02%20The%20Christmas%20Song%201.mp3?dl=1" preload="metadata" controls>
 						Sorry, your browser will not play this audio. You can download <a href="https://www.dropbox.com/s/v1b238ht4hw0wo0/02%20The%20Christmas%20Song%201.mp3?dl=1">The Christmas Song</a> directly instead.
 					</audio>
 				</li>
@@ -149,7 +169,7 @@
 					<div class="song-info">
 						Lead Vocals/Composition/Instrumentation: Daniel Ryan Denton, Background Vocals: Don Denton
 					</div>
-					<audio src="https://www.dropbox.com/s/ov6uazefmpu8pww/03%20Silver%20Bells%201.mp3?dl=1" controls>
+					<audio src="https://www.dropbox.com/s/ov6uazefmpu8pww/03%20Silver%20Bells%201.mp3?dl=1" preload="metadata" controls>
 						Sorry, your browser will not play this audio. You can download <a href="https://www.dropbox.com/s/ov6uazefmpu8pww/03%20Silver%20Bells%201.mp3?dl=1">Silver Bells</a> directly instead.
 					</audio>
 				</li>
@@ -157,7 +177,7 @@
 					<div class="song-info">
 						Vocals: Don Denton, Piano Solo: Daniel Ryan Denton, Instrumentation: glorious karaoke ;-)
 					</div>
-					<audio src="https://www.dropbox.com/s/dwxeual9hlwqwhk/04%20Christmas%20Waltz%201.mp3?dl=1" controls>
+					<audio src="https://www.dropbox.com/s/dwxeual9hlwqwhk/04%20Christmas%20Waltz%201.mp3?dl=1" preload="metadata" controls>
 						Sorry, your browser will not play this audio. You can download <a href="https://www.dropbox.com/s/dwxeual9hlwqwhk/04%20Christmas%20Waltz%201.mp3?dl=1">Christmas Waltz</a> directly instead.
 					</audio>
 				</li>
@@ -165,7 +185,7 @@
 					<div class="song-info">
 						Vocals: Don Denton &amp; Daniel Ryan Denton, Arrangement: Daniel Ryan Denton
 					</div>
-					<audio src="https://www.dropbox.com/s/c7ktp9y50jmojtj/05%20Have%20Yourself%20a%20Merry%20Little%20Christmas.mp3?dl=1" controls>
+					<audio src="https://www.dropbox.com/s/c7ktp9y50jmojtj/05%20Have%20Yourself%20a%20Merry%20Little%20Christmas.mp3?dl=1" preload="metadata" controls>
 						Sorry, your browser will not play this audio. You can download <a href="https://www.dropbox.com/s/c7ktp9y50jmojtj/05%20Have%20Yourself%20a%20Merry%20Little%20Christmas.mp3?dl=1">Have Yourself a Merry Little Christmas</a> directly instead.
 					</audio>
 				</li>
@@ -174,15 +194,67 @@
 			
 			<a class="button" href="https://www.dropbox.com/sh/v2wzzai0bq7gaj1/AAAZC9KiuTYxcMxedfVJzYSsa?dl=1">Download the Album</a>
 		</div>
-		
 		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-			ga('create', 'UA-46624319-1', 'auto');
-			ga('send', 'pageview');
+			// via https://codepen.io/nouribram/pen/ZvPzRX
+			window.onload = function(){
+				//get and store canvas & context
+				var canvas = document.getElementById("sky");
+				var ctx    = canvas.getContext("2d");
+				var h     = window.innerHeight;
+				var w     = window.innerWidth;
+				//set dims to window
+				canvas.height = h;
+				canvas.width  = w;
+				// Generate snowflakes 
+				var mf = 100; // max flakes
+				var flakes = [];
+				// loop through the empty flakes 
+				for(var i = 0; i < mf; i++){
+					
+					flakes.push({
+						x: Math.random()*w,
+						y: Math.random()*h,
+						r: Math.random()*5+2, //min of 2px and max 7px
+						d: Math.random() + 1  // density of flakes
+						})
+				}
+				//draw flakes 
+				function drawFlakes(){
+					ctx.clearRect(0, 0, w, h);
+					ctx.fillStyle = "white";
+					ctx.beginPath();
+					for(var i = 0; i < mf; i++){
+						var f = flakes[i];
+						ctx.moveTo(f.x, f.y);
+						ctx.arc(f.x, f.y, f.r, 0, Math.PI*2, true);
+					}
+					ctx.fill();
+					moveFlakes();
+				}
+				//animate the flakes
+				var angle = 0;
+				function moveFlakes(){
+					angle += 0.01;
+					for(var i = 0; i < mf; i++){
+						//store the current flake
+						var f = flakes[i];
+						//Upadte Y and X coordinate of each snow
+						f.y += Math.pow(f.d, 2) + 1;
+						f.x += Math.sin(angle) * 2;
+						//if the snow reach to the bottom send it to the top again
+						if(f.y > h){
+							flakes[i] = {x: Math.random()*w, y: 0, r: f.r, d: f.d};
+							}
+						}
+					}
+				setInterval(drawFlakes, 25);
+				window.onresize = (function () {
+					h = window.innerHeight;
+					w = window.innerWidth;
+					canvas.height = h;
+					canvas.width = w;
+				})
+			}
 		</script>
 	</body>
 </html>
